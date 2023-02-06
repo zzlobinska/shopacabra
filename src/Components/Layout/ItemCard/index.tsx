@@ -18,15 +18,16 @@ const ItemCard = (props: ItemCardProps) => {
 							it free)
 						</p>
 					</div>
-					<Button onClick={props.onClick} text='see more' />
-				</div>
-				<div className={styles.left}>
 					<img
 						className={styles.photo}
 						alt='a panties to buy'
 						src='https://ae01.alicdn.com/kf/HTB1yZU9pIyYBuNkSnfoq6AWgVXaR.jpg'
 					/>
+				</div>
+
+				<div className={styles.buttons}>
 					<Button text='add to basket' />
+					<Button onClick={props.onClick} text='see more' />
 				</div>
 			</div>
 		</div>
