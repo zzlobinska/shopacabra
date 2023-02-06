@@ -1,10 +1,15 @@
 import styles from './ItemDetail.module.scss';
 import { BsXSquare } from 'react-icons/bs';
+import Button from '../../UI/Button';
 
-const ItemDetail = () => {
+type ItemDetailProps = { closeModal: () => void };
+
+const ItemDetail = (props: ItemDetailProps) => {
 	return (
 		<div className={styles.box}>
-			<button className={styles.btn}><BsXSquare size={30}/></button>
+			<button className={styles.btn} onClick={props.closeModal}>
+				<BsXSquare size={30} />
+			</button>
 			<div className={styles.content}>
 				<img
 					className={styles.photo}
@@ -21,6 +26,7 @@ const ItemDetail = () => {
 					consectetur fuga neque illo explicabo dolorem possimus odio sit
 					quibusdam ut. Consequuntur.
 				</p>
+				<Button text='add to basket' />
 			</div>
 		</div>
 	);

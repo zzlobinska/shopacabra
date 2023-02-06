@@ -1,6 +1,11 @@
+import Button from '../../UI/Button';
 import styles from './ItemCard.module.scss';
 
-const ItemCard = () => {
+type ItemCardProps = {
+	onClick: () => void;
+};
+
+const ItemCard = (props: ItemCardProps) => {
 	return (
 		<div className={styles.card}>
 			<div className={styles.content}>
@@ -13,13 +18,16 @@ const ItemCard = () => {
 							it free)
 						</p>
 					</div>
-					<button className={styles.btn}>see more</button>
+					<Button onClick={props.onClick} text='see more' />
 				</div>
-				<img
-					className={styles.photo}
-					alt='a panties to buy'
-					src='https://ae01.alicdn.com/kf/HTB1yZU9pIyYBuNkSnfoq6AWgVXaR.jpg'
-				/>
+				<div className={styles.left}>
+					<img
+						className={styles.photo}
+						alt='a panties to buy'
+						src='https://ae01.alicdn.com/kf/HTB1yZU9pIyYBuNkSnfoq6AWgVXaR.jpg'
+					/>
+					<Button text='add to basket' />
+				</div>
 			</div>
 		</div>
 	);
