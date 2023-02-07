@@ -1,0 +1,15 @@
+.loading {
+	font-size: 30px;
+	font-style: italic;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}
+
+.item {
+	display: flex;
+	justify-content: center;
+}

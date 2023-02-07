@@ -1,0 +1,21 @@
+.section {
+    background-color: #FF577F;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 calc(50% - 900px);
+}
+
+.logo {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.basket {
+    padding: 15px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
