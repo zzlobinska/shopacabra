@@ -1,10 +1,12 @@
+
+
 .box {
-	position: absolute;
+	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 700px;
-
+	z-index: 100;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
@@ -28,13 +30,12 @@
 	justify-content: center;
 	align-items: center;
 	padding: 50px;
-    gap: 50px;
+	gap: 50px;
 }
 
 .photo {
 	width: 300px;
 	height: 300px;
-	
 }
 
 .header {
@@ -42,28 +43,26 @@
 	display: flex;
 	gap: 20px;
 	align-items: center;
-   
 }
 
 .title {
-    font-size: 40px;
-    text-transform: uppercase;
-    color: #ff577f;
+	font-size: 40px;
+	text-transform: uppercase;
+	color: #ff577f;
 }
 
 .price {
-    font-weight: bold;
-    font-size: 25px;
-    text-transform: uppercase;
+	font-weight: bold;
+	font-size: 25px;
+	text-transform: uppercase;
 }
 
 .description {
-    line-height: 30px;
+	line-height: 30px;
 }
 
 .add_btn {
-padding: 20px;
-text-transform: uppercase;
-border: none;
+	padding: 20px;
+	text-transform: uppercase;
+	border: none;
 }
-

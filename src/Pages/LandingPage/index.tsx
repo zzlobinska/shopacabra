@@ -1,9 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Header from '../../Components/Layout/Header';
 import ItemCard from '../../Components/Layout/ItemCard';
 import ItemDetail from '../../Components/Layout/ItemDetail';
 import classNames from 'classnames';
 import styles from './LandingPage.module.scss';
+
+import Modal from '../../Components/UI/Modal';
+import ItemList from '../../Components/Layout/ItemList';
 
 const LandingPage = () => {
 	const [isModalActive, setIsModalActive] = useState<boolean>(false);
@@ -13,14 +16,8 @@ const LandingPage = () => {
 
 	const closeModal = () => {
 		setIsModalActive(false);
-		
 	};
 
-	useEffect(() => {
-		if (isModalActive) {
-			document.body.style.overflow = 'hidden';
-		}
-	}, [isModalActive]);
 	return (
 		<div
 			className={classNames({
@@ -30,13 +27,11 @@ const LandingPage = () => {
 			<Header />
 			<div className={styles.section}>
 				<h1 className={styles.title}>Hey! Buy some panties ;)</h1>
-				<ul className={styles.list}>
-					<li className={styles.item}>
-						<ItemCard onClick={modalHandler} />
-					</li>
-				</ul>
+				<ItemList modalHandler={modalHandler}/>
 			</div>
-			{isModalActive && <ItemDetail closeModal={closeModal} />}
+			<Modal isModalActive={isModalActive} onClose={closeModal}>
+				<ItemDetail closeModal={closeModal} />
+			</Modal>
 		</div>
 	);
 };
