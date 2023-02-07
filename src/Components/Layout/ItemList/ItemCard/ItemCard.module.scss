@@ -46,8 +46,9 @@ flex-direction: column;
 .photo {
 	width: 150px;
 	height: 150px;
-	object-fit: cover;
-	border: 1px solid rgb(255, 162, 0);
+	object-fit: contain;
+	aspect-ratio: 1/1;
+	
 }
 
 
