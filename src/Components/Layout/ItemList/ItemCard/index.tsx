@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { ProductType } from '..';
+import { addToCart } from '../../../../Store/cartSlice';
 import Button from '../../../UI/Button';
 import Modal from '../../../UI/Modal';
 import ItemDetail from '../ItemDetail';
@@ -10,6 +12,8 @@ type ItemCardProps = {
 };
 
 const ItemCard = (props: ItemCardProps) => {
+	const dispatch = useDispatch();
+	
 	const { title, price, description, image } = props.product;
 
 	const [isModalActive, setIsModalActive] = useState<boolean>(false);
@@ -20,6 +24,12 @@ const ItemCard = (props: ItemCardProps) => {
 	const openModal = () => {
 		setIsModalActive(true);
 	};
+
+	const addToCartHandler = () => {
+		dispatch(addToCart(props.product as any));
+	};
+
+
 	return (
 		<div className={styles.card}>
 			<div className={styles.content}>
@@ -33,7 +43,7 @@ const ItemCard = (props: ItemCardProps) => {
 				</div>
 
 				<div className={styles.buttons}>
-					<Button text='add to basket' />
+					<Button onClick={addToCartHandler} text='add to basket' />
 					<Button onClick={openModal} text='see more' />
 				</div>
 			</div>
