@@ -2,10 +2,16 @@ import styles from './ItemDetail.module.scss';
 import { BsXSquare } from 'react-icons/bs';
 import Button from '../../../UI/Button';
 import { ProductType } from '..';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../../../Store/cartSlice';
 
 type ItemDetailProps = { closeModal: () => void; product: ProductType };
 
 const ItemDetail = (props: ItemDetailProps) => {
+	const dispatch = useDispatch();
+	const addToCartHandler = () => {
+		dispatch(addToCart(props.product as any));
+	};
 	const { title, price, description, image } = props.product;
 	return (
 		<div className={styles.box}>
@@ -19,7 +25,7 @@ const ItemDetail = (props: ItemDetailProps) => {
 					<p className={styles.price}>{price}</p>
 				</div>
 				<p className={styles.description}>{description}</p>
-				<Button text='add to basket' />
+				<Button onClick={addToCartHandler} text='add to basket' />
 			</div>
 		</div>
 	);

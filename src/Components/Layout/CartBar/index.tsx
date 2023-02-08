@@ -1,38 +1,21 @@
-import { BsDashSquare, BsPlusSquare } from 'react-icons/bs';
 import { useSelector } from 'react-redux';
+import { ProductType } from '../ItemList';
 
 import styles from './Cart.module.scss';
+import CartItem from './CartItem';
 
 const CartBar = () => {
- const items = useSelector(state: any => state.cart)
+	const items = useSelector((state: any) => state.cart.cartItems);
+
 	return (
 		<div className={styles.cart}>
 			<h2 className={styles.header}>Your items:</h2>
-
-			<div className={styles.item}>
-				<div className={styles.description}>
-					<img
-						alt='a product to buy'
-						src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx8qFpKYKIfC-Y166zoONiYOvYgC6vAE5XSY8IBqIovw&s'
-						className={styles.photo}
-					/>
-					<p className={styles.title}>item title</p>
-					<p className={styles.price}>2 pln</p>
-				</div>
-				<div className={styles.total}>
-					<div className={styles.quantity}>
-						<p className={styles.number}>2</p>
-						<div className={styles.change}>
-							<button className={styles.btn}>
-								<BsPlusSquare size={20} />
-							</button>
-							<button className={styles.btn}>
-								<BsDashSquare size={20} />
-							</button>
-						</div>
-					</div>
-					<p className={styles.amount}>4 pln</p>
-				</div>
+			{items.map((item: ProductType) => (
+				<CartItem key={item.id} product={item} />
+			))}
+			<div className={styles.total}>
+				<p className={styles.text}>total</p>
+				<p className={styles.amount}>10 pln</p>
 			</div>
 		</div>
 	);
