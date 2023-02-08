@@ -1,6 +1,8 @@
+@use '../../../../Styles/' as *;
+
 .card {
 	width: 80%;
-	border: 3px solid rgb(255, 162, 0);
+	border: 3px solid $orange;
 	padding: 30px;
 	border-radius: 30px;
 	box-shadow: 8px 8px 45px -6px rgb(214, 212, 212);
@@ -27,7 +29,7 @@ flex-direction: column;
 
 .title {
     text-transform: uppercase;
-    color: #FF577F;
+    color: $pink;
     font-size: 25px;
 }
 

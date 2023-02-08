@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ProductType } from '../Components/Layout/ItemList';
+
 
 const initialState = {
 	cartItems: [],
@@ -21,6 +21,7 @@ const cartSlice = createSlice({
 				const tempProduct = { ...action.payload, cartQuantity: 1 };
 				state.cartItems.push(tempProduct);
 			}
+			state.cartTotalQuantity += 1;
 		},
 	},
 });

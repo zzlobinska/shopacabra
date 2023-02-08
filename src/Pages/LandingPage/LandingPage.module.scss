@@ -1,3 +1,5 @@
+@use '../../Styles/' as *;
+
 .active {
 	scroll-behavior: none;
 }
@@ -14,7 +16,7 @@
 	font-size: 60px;
 	margin-bottom: 150px;
 	font-weight: lighter;
-	text-shadow: 0px 0px 5px rgba(255, 87, 127, 1);
+	text-shadow: 0px 0px 5px $pink;
 }
 
 .item {

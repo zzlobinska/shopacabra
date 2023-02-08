@@ -1,3 +1,5 @@
+@use '../../../Styles/' as *;
+
 .btn {
 	margin-top: 20px;
 	width: 50%;
@@ -6,10 +8,11 @@
 	border: none;
 	cursor: pointer;
 	border-radius: 10px;
+	border: 3px solid transparent;
 
 	&:hover {
-		border: 3px solid rgb(255, 162, 0);
+		border: 3px solid $orange;
 		background-color: transparent;
-		padding: 18px;
+		
 	}
 }
