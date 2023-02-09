@@ -3,19 +3,19 @@ import { BsFillBasketFill } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
 
 import CartBar from '../CartBar';
-import { useState } from 'react';
 import { toggleCart } from '../../../Store/cartSlice';
+import { RootState } from '../../../Store/store';
 
 const Header = () => {
 	const dispatch = useDispatch();
-	const isCartOpen = useSelector((state: any) => state.cart.cartIsOpen);
+	const isCartOpen = useSelector((state: RootState) => state.cart.cartIsOpen);
 
 	const cartOpeningHandler = () => {
 		dispatch(toggleCart())
 	};
 
 	const productsQuantity = useSelector(
-		(state: any) => state.cart.cartTotalQuantity
+		(state: RootState) => state.cart.cartTotalQuantity
 	);
 	return (
 		<div className={styles.section}>

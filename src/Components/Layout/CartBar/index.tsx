@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTotals } from '../../../Store/cartSlice';
+import { RootState } from '../../../Store/store';
 import { ProductType } from '../ItemList';
 
 import styles from './Cart.module.scss';
@@ -9,10 +10,10 @@ import CartItem from './CartItem';
 const CartBar = () => {
 	const dispatch = useDispatch();
 
-	const cart = useSelector((state: any) => state.cart);
+	const cart = useSelector((state: RootState) => state.cart);
 
 	useEffect(() => {
-		// @ts-ignore
+		
 		dispatch(getTotals());
 	}, [cart]);
 

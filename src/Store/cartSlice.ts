@@ -1,5 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { ProductType } from '../Components/Layout/ItemList';
+
+type CartTotalType = {
+	total: number,
+	quantity: number
+}
+type CartItemType = {
+	price: number,
+	cartQuantity: number
+}
+
 const initialState = localStorage.getItem('cartState')
 	? JSON.parse(localStorage.getItem('cartState') || '')
 	: {
@@ -9,13 +19,15 @@ const initialState = localStorage.getItem('cartState')
 			cartIsOpen: false,
 	  };
 
+
+
 const cartSlice = createSlice({
 	name: 'cart',
-	initialState: initialState as any,
+	initialState: initialState,
 	reducers: {
 		addToCart(state, action) {
 			const itemIndex = state.cartItems.findIndex(
-				(item: any) => item.id === action.payload.id
+				(item: ProductType) => item.id === action.payload.id
 			);
 			if (itemIndex >= 0) {
 				state.cartItems[itemIndex].cartQuantity += 1;
@@ -37,7 +49,7 @@ const cartSlice = createSlice({
 		},
 		decreaseCart(state, action) {
 			const itemIndex = state.cartItems.findIndex(
-				(item: any) => item.id === action.payload.id
+				(item: ProductType) => item.id === action.payload.id
 			);
 
 			if (state.cartItems[itemIndex].cartQuantity > 1) {
@@ -59,9 +71,9 @@ const cartSlice = createSlice({
 			state.cartIsOpen = !state.cartIsOpen;
 		},
 
-		getTotals(state, action) {
+		getTotals(state) {
 			let { total, quantity } = state.cartItems.reduce(
-				(cartTotal: any, cartItem: any) => {
+				(cartTotal: CartTotalType , cartItem: CartItemType ) => {
 					const { price, cartQuantity } = cartItem;
 					const itemTotal = price * cartQuantity;
 

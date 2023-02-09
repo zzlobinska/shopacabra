@@ -3,7 +3,9 @@ import cartSlice, { getTotals } from './cartSlice';
 
 const store = configureStore({ reducer: { cart: cartSlice } });
 
-// @ts-ignore
+
 store.dispatch(getTotals());
 
 export default store;
+
+export type RootState = ReturnType<typeof store.getState>
