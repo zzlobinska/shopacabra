@@ -1,17 +1,19 @@
 import styles from './Header.module.scss';
 import { BsFillBasketFill } from 'react-icons/bs';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import CartBar from '../CartBar';
 import { useState } from 'react';
+import { toggleCart } from '../../../Store/cartSlice';
 
 const Header = () => {
-	
-	const [isCartOpen, setisCartOpen] = useState(false);
+	const dispatch = useDispatch();
+	const isCartOpen = useSelector((state: any) => state.cart.cartIsOpen);
 
 	const cartOpeningHandler = () => {
-		setisCartOpen(prev => !prev);
+		dispatch(toggleCart())
 	};
+
 	const productsQuantity = useSelector(
 		(state: any) => state.cart.cartTotalQuantity
 	);

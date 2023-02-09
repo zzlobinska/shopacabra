@@ -25,7 +25,7 @@ const ItemDetail = (props: ItemDetailProps) => {
 					<p className={styles.price}>{price}</p>
 				</div>
 				<p className={styles.description}>{description}</p>
-				<Button onClick={addToCartHandler} text='add to basket' />
+				<Button onClick={addToCartHandler} text='add to cart' />
 			</div>
 		</div>
 	);

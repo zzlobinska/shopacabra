@@ -1,6 +1,8 @@
 @use '../../../Styles/' as *;
 
 .cart {
+	overflow: auto;
+	max-height: 80vh;
 	position: absolute;
 	top: 74px;
 	right: 30px;
@@ -9,6 +11,10 @@
 	box-shadow: 8px 8px 45px -6px rgb(140, 140, 140);
 	border-bottom-left-radius: 30px;
 	border-bottom-right-radius: 30px;
+	@media(max-width: 800px) {
+		left: 20px;
+		right: 20px;
+	}
 }
 
 .header {
@@ -28,6 +34,10 @@
 	gap: 30px;
 	font-size: 20px;
 	text-transform: uppercase;
+	@media (max-width: 700px) {
+		grid-template-columns: unset;
+		width: 100%;
+	}
 }
 
 .amount {

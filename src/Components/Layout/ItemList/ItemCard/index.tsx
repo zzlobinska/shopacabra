@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { ProductType } from '..';
-import { addToCart } from '../../../../Store/cartSlice';
+import { addToCart, openCart } from '../../../../Store/cartSlice';
 import Button from '../../../UI/Button';
 import Modal from '../../../UI/Modal';
 import ItemDetail from '../ItemDetail';
@@ -27,6 +27,7 @@ const ItemCard = (props: ItemCardProps) => {
 
 	const addToCartHandler = () => {
 		dispatch(addToCart(props.product as any));
+		dispatch(openCart());
 	};
 
 

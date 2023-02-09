@@ -2,20 +2,39 @@
 
 .item {
 	display: grid;
-    grid-template-columns: 1fr 100px 20px 150px 20px;
+	grid-template-columns: 1fr 100px 20px 150px 20px;
 	color: black;
 	align-items: center;
 	border-top: 1px solid #ddd;
 	padding: 30px 0;
 	gap: 30px;
-    justify-content: space-between;
-    width: 600px;
+	justify-content: space-between;
+	width: 600px;
+	@media (max-width: 800px) {
+		grid-template-columns: 1fr 50px 20px 100px 20px;
+		width: 100%;
+	}
+	@media (max-width: 700px) {
+		grid-template-columns: unset;
+		width: 100%;
+	}
 }
 
 .description {
-	display: flex;
+	display: grid;
+	grid-template-columns: 50px 1fr;
+	gap: 10px;
 	align-items: center;
-	gap: 20px;
+
+	@media (max-width: 700px) {
+		grid-column: 1 / 5;
+	}
+}
+
+.title {
+	@media (max-width: 600px) {
+		font-size: 12px;
+	}
 }
 
 .photo {
@@ -31,6 +50,7 @@
 	display: flex;
 	align-items: center;
 	gap: 30px;
+    
 }
 
 .quantity {
@@ -40,6 +60,12 @@
 	gap: 10px;
 	font-size: 20px;
 	font-weight: bold;
+	@media (max-width: 800px) {
+		font-size: 16px;
+	}
+	@media (max-width: 700px) {
+		grid-column: 2 /4;
+	}
 }
 
 .change {
@@ -51,11 +77,21 @@
 	border: none;
 	background-color: #fff;
 	cursor: pointer;
+	@media (max-width: 700px) {
+		grid-column: 5 / 6;
+		grid-row: 1;
+	}
 }
 
 .amount {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 20px;
-    text-align: right;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: right;
+	@media (max-width: 800px) {
+		font-size: 16px;
+	}
+	@media (max-width: 700px) {
+		grid-column: 4/ 6;
+	}
 }
