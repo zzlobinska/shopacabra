@@ -43,7 +43,7 @@ const ItemCard = (props: ItemCardProps) => {
 				</div>
 
 				<div className={styles.buttons}>
-					<Button onClick={addToCartHandler} text='add to basket' />
+					<Button onClick={addToCartHandler} text='add to cart' />
 					<Button onClick={openModal} text='see more' />
 				</div>
 			</div>

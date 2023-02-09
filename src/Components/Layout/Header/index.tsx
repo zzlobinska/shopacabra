@@ -6,6 +6,7 @@ import CartBar from '../CartBar';
 import { useState } from 'react';
 
 const Header = () => {
+	
 	const [isCartOpen, setisCartOpen] = useState(false);
 
 	const cartOpeningHandler = () => {

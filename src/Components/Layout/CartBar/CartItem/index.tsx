@@ -1,6 +1,10 @@
 import { BsDashSquare, BsPlusSquare, BsXSquare } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
-import { addToCart, decreaseCart, removeFromCart } from '../../../../Store/cartSlice';
+import {
+	addToCart,
+	decreaseCart,
+	removeFromCart,
+} from '../../../../Store/cartSlice';
 import { ProductType } from '../../ItemList';
 import styles from './CartItem.module.scss';
 
@@ -18,7 +22,7 @@ const CartItem = ({ product }: { product: ProductType }) => {
 	};
 
 	return (
-		<div  className={styles.item} >
+		<div className={styles.item}>
 			<div className={styles.description}>
 				<img
 					alt='a product to buy'
@@ -32,10 +36,16 @@ const CartItem = ({ product }: { product: ProductType }) => {
 			<div className={styles.quantity}>
 				<p className={styles.number}>{product.cartQuantity}</p>
 				<div className={styles.change}>
-					<button  onClick={() => increaseHandler(product)} className={styles.btn}>
+					<button
+						onClick={() => increaseHandler(product)}
+						className={styles.btn}
+					>
 						<BsPlusSquare size={20} />
 					</button>
-					<button onClick={() => decreaseHandler(product)} className={styles.btn}>
+					<button
+						onClick={() => decreaseHandler(product)}
+						className={styles.btn}
+					>
 						<BsDashSquare size={20} />
 					</button>
 				</div>
@@ -44,7 +54,10 @@ const CartItem = ({ product }: { product: ProductType }) => {
 			<p className={styles.amount}>
 				{(+product.price * product.cartQuantity).toFixed(2)} pln
 			</p>
-			<button onClick={() => removeFromCartHandler(product)} className={styles.btn}>
+			<button
+				onClick={() => removeFromCartHandler(product)}
+				className={styles.btn}
+			>
 				<BsXSquare size={20} />
 			</button>
 		</div>

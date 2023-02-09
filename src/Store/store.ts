@@ -1,6 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import cartSlice from './cartSlice';
+import cartSlice, { getTotals } from './cartSlice';
 
 const store = configureStore({ reducer: { cart: cartSlice } });
+
+// @ts-ignore
+store.dispatch(getTotals());
 
 export default store;
