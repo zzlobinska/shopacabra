@@ -22,7 +22,7 @@ const ItemDetail = (props: ItemDetailProps) => {
 				<img className={styles.photo} alt='a panties to buy' src={image} />
 				<div className={styles.header}>
 					<h2 className={styles.title}>{title}</h2>
-					<p className={styles.price}>{price}</p>
+					<p className={styles.price}>{Number(price).toFixed(2)} pln</p>
 				</div>
 				<p className={styles.description}>{description}</p>
 				<Button onClick={addToCartHandler} text='add to cart' />

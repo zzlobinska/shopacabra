@@ -31,7 +31,7 @@ const CartItem = ({ product }: { product: ProductType }) => {
 				/>
 				<p className={styles.title}>{product.title}</p>
 			</div>
-			<p className={styles.price}>{product.price} pln</p>
+			<p className={styles.price}>{Number(product.price).toFixed(2)} pln</p>
 
 			<div className={styles.quantity}>
 				<p className={styles.number}>{product.cartQuantity}</p>

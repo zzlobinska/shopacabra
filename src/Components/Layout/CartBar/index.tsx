@@ -25,7 +25,7 @@ const CartBar = () => {
 			))}
 			<div className={styles.total}>
 				<p className={styles.text}>total</p>
-				<p className={styles.amount}>{cart.cartTotalAmount} pln</p>
+				<p className={styles.amount}>{Number(cart.cartTotalAmount).toFixed(2)} pln</p>
 			</div>
 		</div>
 	);

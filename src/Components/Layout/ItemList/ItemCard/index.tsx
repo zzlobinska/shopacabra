@@ -37,7 +37,7 @@ const ItemCard = (props: ItemCardProps) => {
 				<div className={styles.about}>
 					<div className={styles.text}>
 						<h2 className={styles.title}>{title}</h2>
-						<p className={styles.price}>{price} pln</p>
+						<p className={styles.price}>{Number(price).toFixed(2)} pln</p>
 						<p className={styles.description}>{description}</p>
 					</div>
 					<img className={styles.photo} alt='a panties to buy' src={image} />
