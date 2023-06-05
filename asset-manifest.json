@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/shopacabra/static/css/main.093cfd15.css",
+    "main.js": "/shopacabra/static/js/main.32b3a1d5.js",
+    "static/js/787.ae2fbb6e.chunk.js": "/shopacabra/static/js/787.ae2fbb6e.chunk.js",
+    "index.html": "/shopacabra/index.html",
+    "main.093cfd15.css.map": "/shopacabra/static/css/main.093cfd15.css.map",
+    "main.32b3a1d5.js.map": "/shopacabra/static/js/main.32b3a1d5.js.map",
+    "787.ae2fbb6e.chunk.js.map": "/shopacabra/static/js/787.ae2fbb6e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.093cfd15.css",
+    "static/js/main.32b3a1d5.js"
+  ]
+}
